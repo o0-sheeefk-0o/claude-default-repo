@@ -1,4 +1,18 @@
 {
+  "permissions": {
+    "allow": ["Bash(ls *)"],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(git reset --hard *)",
+      "Bash(git checkout -f *)"
+    ],
+    "deny": [
+      "Bash(curl *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -22,5 +36,18 @@
         ]
       }
     ]
-  }
+  },
+  "env": {
+    "SAMPLE_ENV_VAR": "ここに設定した環境変数はすべてのセッションで参照可能です"
+  },
+  "attribution": {
+    "commit": "コミット文の末尾に追加される属性文章を編集します。空文字にすることで抑制可能です",
+    "pr": "Pull Request文の末尾に追加される属性文章を編集します。空文字にすることで抑制可能です"
+  },
+  "companyAnnouncements": [
+    "こんにちはこれはClaudeのデフォルトリポジトリです！",
+    "こんにちはこれはClaudeのデフォルト設定を行うリポジトリです！",
+    "ここに記載した内容はclaude起動時に表示されます！",
+    "複数設定している場合はランダムに表示されます！"
+  ]
 }
