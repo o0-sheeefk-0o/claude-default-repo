@@ -1,6 +1,11 @@
 {
   "permissions": {
-    "allow": ["Bash(ls *)"],
+    "allow": [
+      "Read(//Users/alice/memo/*)",
+      "Bash(ls *)",
+      "Bash(* --version)",
+      "Bash(* --help *)"
+    ],
     "ask": [
       "Bash(git push *)",
       "Bash(git reset --hard *)",
