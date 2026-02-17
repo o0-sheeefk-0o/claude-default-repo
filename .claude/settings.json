@@ -5,13 +5,13 @@
       "Bash(ls *)",
       "Bash(* --version)",
       "Bash(* --help *)",
-      "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git *)",
+      "Bash(echo *)"
     ],
     "ask": [
-      "Bash(git push *)",
-      "Bash(git reset --hard *)",
-      "Bash(git checkout -f *)"
+      "Bash(git -C * push *)",
+      "Bash(git -C * reset --hard *)",
+      "Bash(git -C * checkout -f *)"
     ],
     "deny": [
       "Bash(curl *)",
