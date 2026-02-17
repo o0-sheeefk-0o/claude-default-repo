@@ -4,7 +4,9 @@
       "Read(//Users/alice/memo/*)",
       "Bash(ls *)",
       "Bash(* --version)",
-      "Bash(* --help *)"
+      "Bash(* --help *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ],
     "ask": [
       "Bash(git push *)",
