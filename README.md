@@ -10,12 +10,16 @@
 .claude/
 ├── CLAUDE.md              # Claude への共通指示（チーム合意文書）
 ├── rules/                 # 追加ルール（自動読み込み）
+│   ├── testing.md
+│   └── frontend/
 ├── commands/              # スラッシュコマンド定義
+│   ├── commit.md          # コミット作成
+│   ├── explain-project.md # プロジェクト概要説明
+│   └── update-readme.md   # README 更新
 ├── skills/                # スキル定義
 │   ├── design-review/
 │   ├── implement-feature/
-│   ├── generate-tests/
-│   └── refactor/
+│   └── generate-tests/
 ├── agents/                # サブエージェント定義
 │   ├── architect.md
 │   ├── implementer.md
@@ -23,22 +27,28 @@
 ├── hooks/                 # 自動実行スクリプト
 │   ├── protect-files.sh   # 危険ファイル保護
 │   └── run-tests.sh       # 自動テスト実行
-└── settings.json          # フック設定
+├── settings.json          # フック・権限設定
+└── settings.local.json    # 個人設定（git 管理外推奨）
 ```
 
 ---
 
 ## 日常の使い方
 
-### スキル（スラッシュコマンド）
+### スキル・コマンド（スラッシュコマンド）
 
-定義済みスキルを呼び出して、作業を標準化します。
+定義済みのスキルとコマンドを呼び出して、作業を標準化します。
 
 ```shell
+# スキル（設計・実装・テスト支援）
 /implement-feature ユーザー登録APIを追加したい
 /design-review この Service 設計どう？
 /generate-tests この Service クラスのテストを書いて
+
+# コマンド（ワークフロー自動化）
 /explain-project
+/commit
+/update-readme
 ```
 
 ### サブエージェント
@@ -73,16 +83,25 @@
 
 **変更する場合は PR + チーム合意が必要。**
 
-### スキル ― チーム標準コマンドを固定する
+### スキル・コマンド ― チーム標準を固定する
 
-勝手にスキルを追加・変更しない。追加したい場合は PR + 合意を取る。
+勝手に追加・変更しない。追加したい場合は PR + 合意を取る。
+
+**スキル（`skills/`）**
 
 | スキル | 用途 |
 |--------|------|
 | `implement-feature` | 既存設計を守って機能実装 |
 | `design-review` | 設計の破綻をレビュー |
 | `generate-tests` | 既存コードから網羅的なテストを生成 |
-| `refactor` | 責務を崩さないリファクタ |
+
+**コマンド（`commands/`）**
+
+| コマンド | 用途 |
+|----------|------|
+| `commit` | チーム規約に沿ったコミットメッセージを作成してコミット |
+| `explain-project` | プロジェクトの概要・アーキテクチャ・規約を説明 |
+| `update-readme` | プロジェクトの実態を調査して README を同期 |
 
 ### サブエージェント ― 役割を固定して使う
 

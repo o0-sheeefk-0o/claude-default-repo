@@ -9,6 +9,11 @@
       "Bash(echo *)"
     ],
     "ask": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git reset --hard *)",
+      "Bash(git checkout -f *)",
+      "Bash(git -C * commit *)",
       "Bash(git -C * push *)",
       "Bash(git -C * reset --hard *)",
       "Bash(git -C * checkout -f *)"
